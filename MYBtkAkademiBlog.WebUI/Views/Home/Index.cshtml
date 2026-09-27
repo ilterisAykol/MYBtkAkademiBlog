@@ -1,58 +1,26 @@
 ﻿<!DOCTYPE html>
 <html lang="zxx">
     @await Component.InvokeAsync("_LayoutHeadComponentPartial")
-    <body> 
+<body>
 
     @await Component.InvokeAsync("_LayoutRightSideBarComponentPartial")
 
 
 
-        <header id="back-header" class="back-header">
+    <header id="back-header" class="back-header">
 
         @await Component.InvokeAsync("_LayoutHeaderComponentPartial")
 
         @await Component.InvokeAsync("_LayoutNavbarComponentPartial")
 
-        </header>
-        <!--================= Header Section End Here =================-->
+    </header>
 
-        <!--================= Back Wrapper Start Here =================-->
-        <div class="back-wrapper">
-            <!--================= Back Hero Start Here =================-->
-            <div class="back-hero-area md-mt-40">
-                <div class="container">
-                    <div class="row">
+    @RenderBody() <!-- RenderBody -() metodu, Razor sayfasında ana içeriğin yerleştirileceği yeri belirtir. Bu, _Layout.cshtml dosyasında kullanılır ve her bir Razor sayfasının içeriği burada görüntülenir. -->
 
-                    @await Component.InvokeAsync("_DefaultSliderComponentPartial")
+    @await Component.InvokeAsync("_LayoutFooterComponentPartial")
 
-                    @await Component.InvokeAsync("_DefaultFeatureComponentPartial")
-
-                    </div>
-
-                    @await Component.InvokeAsync("_DefaultGetCategoriesWithLastArticleComponentPartial")
-
-                </div>
-            </div>
-
-            @await Component.InvokeAsync("_DefaultTrendingStoriesArticlesComponentPartial")
-
-            @await Component.InvokeAsync("_DefaultLatestPostsComponentPartial")
-
-            @await Component.InvokeAsync("_SubFeatureComponentPartial")
-
-            @await Component.InvokeAsync("_DefaultTradingVideoComponentPartial")
-
-            @await Component.InvokeAsync("_SecondFeaturePostComponentPartial")
-
-            @await Component.InvokeAsync("_DefaultSubSliderComponentPartial")
+    @await Component.InvokeAsync("_LayoutScriptComponentPartial")
 
 
-        </div>
-
-        @await Component.InvokeAsync("_LayoutFooterComponentPartial")
-
-        @await Component.InvokeAsync("_LayoutScriptComponentPartial")
-
-
-    </body>
+</body>
 </html>
