@@ -1,23 +1,26 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MYBtkAkademiBlog.WebUI</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/MYBtkAkademiBlog.WebUI.styles.css" asp-append-version="true" />
-</head>
+﻿﻿
+<!DOCTYPE html>
+<html lang="zxx">
+    @await Component.InvokeAsync("_LayoutHeadComponentPartial")
 <body>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
+    @await Component.InvokeAsync("_LayoutRightSideBarComponentPartial")
+
+
+
+    <header id="back-header" class="back-header">
+
+        @await Component.InvokeAsync("_LayoutHeaderComponentPartial")
+
+        @await Component.InvokeAsync("_LayoutNavbarComponentPartial")
+
+    </header>
+
+    @RenderBody() <!-- RenderBody -() metodu, Razor sayfasında ana içeriğin yerleştirileceği yeri belirtir. Bu, _Layout.cshtml dosyasında kullanılır ve her bir Razor sayfasının içeriği burada görüntülenir. -->
+    @await Component.InvokeAsync("_LayoutFooterComponentPartial")
+
+    @await Component.InvokeAsync("_LayoutScriptComponentPartial")
+
+
 </body>
 </html>
